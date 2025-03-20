@@ -28,17 +28,17 @@ public class CatalogController {
         
     }
     @GetMapping("/status-task")
-    public String getStatusTask(){
-        return "Task Status";
+    public ResponseEntity<List<ValueLabel>> getStatusTask() {
+        return new ResponseEntity<List<ValueLabel>>(this.serviceCatalog.getStatusTask(), HttpStatus.OK);
     }
     @GetMapping("/categories")
-    public String getCategoriesProject(){
-        return "Categories Project";
+    public ResponseEntity<List<ValueLabel>> getCategoriesProject() {
+        return new ResponseEntity<List<ValueLabel>>(this.serviceCatalog.getCategoriesProject(), HttpStatus.OK);
     }
     
     @GetMapping("/status-priority")
-    public String getStatusPriority(){
-        return "Priority Status";
+    public ResponseEntity<List<ValueLabel>> getStatusPriority() {
+        return new ResponseEntity<List<ValueLabel>>(this.serviceCatalog.getStatusPriority(), HttpStatus.OK);
     }
     
 }
