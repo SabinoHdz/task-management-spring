@@ -13,6 +13,8 @@ import com.springboot.app.project_task.project_task.repositories.catalogs.ITipos
 import com.springboot.app.project_task.project_task.services.interfaces.CatalogService;
 import com.springboot.app.project_task.project_task.utils.helper.CatalogHelper;
 
+import jakarta.validation.ValidationException;
+
 @Service
 public class CatalogServiceImpl implements CatalogService  {
     @Autowired 
@@ -48,6 +50,16 @@ public class CatalogServiceImpl implements CatalogService  {
     @Override
     public List<ValueLabel> getStatusPriority() {
         return this.helper.toStatusPriorityTaskBeanList(repoPriorityTask.findAll());
+    }
+
+    // ****************implemens v2*******************
+    @Override
+    public List<ValueLabel> getCategories() throws ValidationException {
+        try {
+            return this.helper.toCategoryTaskBeanList(repoCategoryTask.findAll());
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
 }

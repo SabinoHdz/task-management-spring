@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.springboot.app.project_task.project_task.beans.ValueLabel;
 import com.springboot.app.project_task.project_task.services.interfaces.CatalogService;
 
+import jakarta.validation.ValidationException;
+
 @RestController
 @RequestMapping("/catalogs")
 public class CatalogController {
@@ -39,6 +41,16 @@ public class CatalogController {
     @GetMapping("/status-priority")
     public ResponseEntity<List<ValueLabel>> getStatusPriority() {
         return new ResponseEntity<List<ValueLabel>>(this.serviceCatalog.getStatusPriority(), HttpStatus.OK);
+    }
+
+    // ****************implemens v2*******************
+    @GetMapping("/categories-project")
+    public ResponseEntity getCategoriesToProject() throws ValidationException {
+        // throw new RuntimeException("Error de prueba para validar el
+        // GlobalExceptionHandler");
+
+        return new ResponseEntity(this.serviceCatalog.getCategoriesProject(),
+                HttpStatus.OK);
     }
     
 }
