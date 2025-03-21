@@ -24,23 +24,21 @@ public class CatalogController {
 
 
     @GetMapping("/status-project")
-    public ResponseEntity<List<ValueLabel>> getStatusProject(){
-
-        return new ResponseEntity<List<ValueLabel>>(this.serviceCatalog.getStatatusProject(),HttpStatus.OK);
-        
+    public ResponseEntity getStatusProject() throws ValidationException {
+        return new ResponseEntity<List<ValueLabel>>(this.serviceCatalog.getStatatusProject(), HttpStatus.OK);
     }
     @GetMapping("/status-task")
-    public ResponseEntity<List<ValueLabel>> getStatusTask() {
+    public ResponseEntity getStatusTask() throws ValidationException {
         return new ResponseEntity<List<ValueLabel>>(this.serviceCatalog.getStatusTask(), HttpStatus.OK);
     }
     @GetMapping("/categories")
-    public ResponseEntity<List<ValueLabel>> getCategoriesProject() {
+    public ResponseEntity getCategoriesProject() throws ValidationException {
         return new ResponseEntity<List<ValueLabel>>(this.serviceCatalog.getCategoriesProject(), HttpStatus.OK);
     }
     
     @GetMapping("/status-priority")
-    public ResponseEntity<List<ValueLabel>> getStatusPriority() {
-        return new ResponseEntity<List<ValueLabel>>(this.serviceCatalog.getStatusPriority(), HttpStatus.OK);
+    public ResponseEntity getStatusPriority() throws ValidationException {
+        return new ResponseEntity(this.serviceCatalog.getStatusPriority(), HttpStatus.OK);
     }
 
     // ****************implemens v2*******************

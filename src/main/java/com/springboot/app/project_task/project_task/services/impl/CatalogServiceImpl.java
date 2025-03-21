@@ -33,23 +33,42 @@ public class CatalogServiceImpl implements CatalogService  {
 
 
     @Override
-    public List<ValueLabel> getStatatusProject() {
-        return this.helper.toStatusProjectBeanList(repoStatusProject.findAll());
+    public List<ValueLabel> getStatatusProject() throws ValidationException {
+        try {
+            return this.helper.toStatusProjectBeanList(repoStatusProject.findAll());
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
     @Override
-    public List<ValueLabel> getStatusTask() {
-        return this.helper.toStatusTaskBeanList(repoStatusTask.findAll());
+    public List<ValueLabel> getStatusTask() throws ValidationException {
+
+        try {
+            return this.helper.toStatusTaskBeanList(repoStatusTask.findAll());
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
     @Override
-    public List<ValueLabel> getCategoriesProject() {
-        return this.helper.toCategoryTaskBeanList(repoCategoryTask.findAll());
+    public List<ValueLabel> getCategoriesProject() throws ValidationException {
+        try {
+            return this.helper.toCategoryTaskBeanList(repoCategoryTask.findAll());
+
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
     @Override
-    public List<ValueLabel> getStatusPriority() {
-        return this.helper.toStatusPriorityTaskBeanList(repoPriorityTask.findAll());
+    public List<ValueLabel> getStatusPriority() throws ValidationException {
+        try {
+            return this.helper.toStatusPriorityTaskBeanList(repoPriorityTask.findAll());
+
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
     // ****************implemens v2*******************
