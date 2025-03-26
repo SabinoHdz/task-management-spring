@@ -75,6 +75,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.springboot.app.project_task.project_task.ProjectTaskApplication</mainClass> <!-- Cambia el paquete -->
+					<jvmArguments>--source 21</jvmArguments>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
