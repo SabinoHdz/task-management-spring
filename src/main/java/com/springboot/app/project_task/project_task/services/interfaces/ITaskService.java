@@ -1,7 +1,6 @@
 package com.springboot.app.project_task.project_task.services.interfaces;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.springboot.app.project_task.project_task.entities.task.TaskEntity;
 import com.springboot.app.project_task.project_task.utils.exceptions.BadResponseException;

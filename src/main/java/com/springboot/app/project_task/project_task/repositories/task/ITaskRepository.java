@@ -5,8 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.springboot.app.project_task.project_task.entities.task.TaskEntity;
 import java.util.List;
-import com.springboot.app.project_task.project_task.entities.catalogs.StatusTaskEntity;
-import com.springboot.app.project_task.project_task.entities.catalogs.StatusPriorityEntity;
+
 
 
 
